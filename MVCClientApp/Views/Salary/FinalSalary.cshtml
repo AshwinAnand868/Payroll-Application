@@ -1,0 +1,22 @@
+﻿@model MVCClientApp.Models.Salary
+
+@{
+    ViewBag.Title = "FinalSalary";
+}
+
+<h2>FinalSalary</h2>
+
+<div id="myaccd">
+    <dl class="dl-horizontal">
+
+        <dt>Employee ID:</dt>
+        <dd>@Html.DisplayFor(salary => salary.EmpId)</dd>
+
+        <dt>Additions:</dt>
+        <dd>@Html.DisplayFor(salary => salary.EmpName)</dd>
+
+        <dt>Final month salary</dt>
+        <dd>@Html.DisplayFor(salary => salary.Details)</dd>
+
+    </dl>
+</div>

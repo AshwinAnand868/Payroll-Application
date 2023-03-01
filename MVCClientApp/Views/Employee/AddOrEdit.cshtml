@@ -1,0 +1,83 @@
+﻿@model MVCClientApp.Models.Employee
+
+@{
+    ViewBag.Title = "AddOrEdit";
+}
+
+<h2>Create or Update employee's data</h2>
+
+<div class="form-body">
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(employee => employee.emp_id)
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.emp_name)
+            @Html.EditorFor(employee => employee.emp_name)
+            @Html.ValidationMessageFor(employee => employee.emp_name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.emp_email)
+            @Html.EditorFor(employee => employee.emp_email)
+            @Html.ValidationMessageFor(employee => employee.emp_email)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.emp_password)
+            @Html.EditorFor(employee => employee.emp_password)
+            @Html.ValidationMessageFor(employee => employee.emp_password)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.emp_gender)
+            @Html.EditorFor(employee => employee.emp_gender)
+            @Html.ValidationMessageFor(employee => employee.emp_gender)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.noOfDependants)
+            @Html.EditorFor(employee => employee.noOfDependants)
+            @Html.ValidationMessageFor(employee => employee.noOfDependants)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.Additions)
+            @Html.EditorFor(employee => employee.Additions)
+            @Html.ValidationMessageFor(employee => employee.Additions)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.ITex)
+            @Html.EditorFor(employee => employee.ITex)
+            @Html.ValidationMessageFor(employee => employee.ITex)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.CPP)
+            @Html.EditorFor(employee => employee.CPP)
+            @Html.ValidationMessageFor(employee => employee.CPP)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.EI)
+            @Html.EditorFor(employee => employee.EI)
+            @Html.ValidationMessageFor(employee => employee.EI)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(employee => employee.FinalSalary)
+            @Html.EditorFor(employee => employee.FinalSalary)
+            @Html.ValidationMessageFor(employee => employee.FinalSalary)
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn button" />
+        </div>
+    }
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+} 

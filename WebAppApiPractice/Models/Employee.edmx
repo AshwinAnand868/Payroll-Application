@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TSQL2012Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="emp_id" />
+          </Key>
+          <Property Name="emp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_name" Type="varchar" MaxLength="60" />
+          <Property Name="emp_email" Type="varchar" MaxLength="40" />
+          <Property Name="emp_password" Type="varchar" MaxLength="30" />
+          <Property Name="emp_gender" Type="varchar" MaxLength="15" />
+          <Property Name="noOfDependants" Type="int" />
+          <Property Name="Additions" Type="money" />
+          <Property Name="ITex" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="CPP" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="EI" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="FinalSalary" Type="money" />
+        </EntityType>
+        <EntityContainer Name="TSQL2012ModelStoreContainer">
+          <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TSQL2012Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="emp_id" />
+          </Key>
+          <Property Name="emp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="emp_email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="emp_password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="emp_gender" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="noOfDependants" Type="Int32" />
+          <Property Name="Additions" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ITex" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="CPP" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="EI" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="FinalSalary" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityContainer Name="TSQL2012Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TSQL2012ModelStoreContainer" CdmEntityContainer="TSQL2012Entities">
+          <EntitySetMapping Name="tblEmployees">
+            <EntityTypeMapping TypeName="TSQL2012Model.tblEmployee">
+              <MappingFragment StoreEntitySet="tblEmployee">
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+                <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+                <ScalarProperty Name="emp_password" ColumnName="emp_password" />
+                <ScalarProperty Name="emp_gender" ColumnName="emp_gender" />
+                <ScalarProperty Name="noOfDependants" ColumnName="noOfDependants" />
+                <ScalarProperty Name="Additions" ColumnName="Additions" />
+                <ScalarProperty Name="ITex" ColumnName="ITex" />
+                <ScalarProperty Name="CPP" ColumnName="CPP" />
+                <ScalarProperty Name="EI" ColumnName="EI" />
+                <ScalarProperty Name="FinalSalary" ColumnName="FinalSalary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

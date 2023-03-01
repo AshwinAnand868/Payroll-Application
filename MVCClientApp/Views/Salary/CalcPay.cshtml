@@ -1,0 +1,85 @@
+﻿@model IEnumerable<MVCClientApp.Models.Employee>
+@{
+    ViewBag.Title = "Pay Calculation";
+}
+
+<h2>Calculate Pay</h2>
+
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            <h4>Employee Name</h4>
+        </th>
+        <th>
+            <h4>Employee Email</h4>
+        </th>
+        <th>
+            <h4>Employee Gender</h4>
+        </th>
+        <th>
+            <h4>No of Dependants</h4>
+        </th>
+        <th>
+            <h4>Salary Additions</h4>
+        </th>
+        <th>
+            <h4>Income Tax</h4>
+        </th>
+        <th>
+            <h4>Canada Pension Plan</h4>
+        </th>
+        <th>
+            <h4>Employee Insurance</h4>
+        </th>
+        <th>
+            <h4>Gross Annual Salary</h4>
+        </th>
+    </tr>
+
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(employees => employee.emp_name)
+            </td>
+            <td>
+                @Html.DisplayFor(employees => employee.emp_email)
+            </td>
+            <td>
+                @Html.DisplayFor(employees => employee.emp_gender)
+            </td>
+            <td>
+                @Html.DisplayFor(employees => employee.noOfDependants)
+            </td>
+            <td>
+                @Html.DisplayFor(employees => employee.Additions)
+            </td>
+            <td>
+                @Html.DisplayFor(employees => employee.ITex)
+            </td>
+            <td>
+                @Html.DisplayFor(employees => employee.CPP)
+            </td>
+            <td>
+                @Html.DisplayFor(employees => employee.EI)
+            </td>
+            <td>
+                @Html.DisplayFor(employees => employee.FinalSalary)
+            </td>
+            <td>
+                @Html.ActionLink("Calculate Pay", "Details", "Salary", new { id = employee.emp_id }, null)
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+
+
+
+
+
+
+

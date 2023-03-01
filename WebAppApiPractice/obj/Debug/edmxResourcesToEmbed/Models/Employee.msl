@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TSQL2012ModelStoreContainer" CdmEntityContainer="TSQL2012Entities">
+    <EntitySetMapping Name="tblEmployees">
+      <EntityTypeMapping TypeName="TSQL2012Model.tblEmployee">
+        <MappingFragment StoreEntitySet="tblEmployee">
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+          <ScalarProperty Name="emp_password" ColumnName="emp_password" />
+          <ScalarProperty Name="emp_gender" ColumnName="emp_gender" />
+          <ScalarProperty Name="noOfDependants" ColumnName="noOfDependants" />
+          <ScalarProperty Name="Additions" ColumnName="Additions" />
+          <ScalarProperty Name="ITex" ColumnName="ITex" />
+          <ScalarProperty Name="CPP" ColumnName="CPP" />
+          <ScalarProperty Name="EI" ColumnName="EI" />
+          <ScalarProperty Name="FinalSalary" ColumnName="FinalSalary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

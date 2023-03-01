@@ -1,0 +1,109 @@
+﻿@model IEnumerable<MVCClientApp.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    <a href="@Url.Action("AddOrEdit", "Employee")" class="btn btn-default">
+        <i class="fa fa-plus"> Create New</i>
+    </a>
+</p>
+
+<!-- Bootstrap table -->
+<table class="table table-striped">
+    <thead class="table-heading">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(employee => employee.emp_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(employee => employee.emp_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(employee => employee.emp_gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(employee => employee.noOfDependants)
+            </th>
+            <th>
+                @Html.DisplayNameFor(employee => employee.Additions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(employee => employee.ITex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(employee => employee.CPP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(employee => employee.EI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(employee => employee.FinalSalary)
+            </th>
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+
+    @foreach(var employee in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => employee.emp_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => employee.emp_email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => employee.emp_gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => employee.noOfDependants)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => employee.Additions)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => employee.ITex)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => employee.CPP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => employee.EI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => employee.FinalSalary)
+                    </td>
+
+                    <td>
+                        <a href="@Url.Action("AddOrEdit", "Employee", new { id = employee.emp_id })" class="btn btn-default">Edit</a>
+                        <a onclick="deleteEmp(@employee.emp_id)" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+</table>
+
+@section scripts {
+    
+    <script type="text/javascript">
+        $(function () {
+            var successMessage = '@TempData["SuccessMessage"]';
+            var failureMessage = '@TempData["FailureMessage"]';
+            
+            if (successMessage != '') {
+                alertify.success(successMessage);
+            } else if(failureMessage != '') {
+                alertify.error(failureMessage);
+            }
+        });
+
+        function deleteEmp(id) {
+            alertify.confirm("", "Are you sure to delete the record?", function () {
+                window.location.href = "@Url.Action("Delete", "Employee")/" + id;
+            }, null);
+        }
+    </script>
+}
